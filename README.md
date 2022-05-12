@@ -12,3 +12,7 @@
 | Já permite o compartilhamento do valor final | 2|
 | Fala o valor calculado usando TTS | 2 |
 | O usuário não precisa clicar para calcular, ele já faz  | 2 |
+
+### Printscreens
+1. Tela inicial após inicializar o aplicativo
+<img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_210658.png?raw=true" height="800" />
