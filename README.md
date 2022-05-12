@@ -16,3 +16,13 @@
 ### Printscreens
 1. Tela inicial após inicializar o aplicativo
 <img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_210658.png?raw=true" height="800" />
+2. Resultado sendo exibido com o campo do valor vazio
+<img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_211849.png?raw=true" height="800" />
+3. Resultado sendo exibido com o campo de quantidade de pessoas vazio
+<img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_211908.png?raw=true" height="800" />
+4. Resultado sendo exibido com os dois campos preenchidos
+<img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_211920.png?raw=true" height="800" />
+5.
+<img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_211933.png?raw=true" height="800" />
+6.
+<img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_211946.png?raw=true" height="800" />
