@@ -20,9 +20,9 @@
 <img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_211849.png?raw=true" height="800" />
 3. Resultado sendo exibido com o campo de quantidade de pessoas vazio
 <img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_211908.png?raw=true" height="800" />
-4. Resultado de número inteiro inteiro sendo exibido com os dois campos preenchidos
+4. Resultado de número inteiro sendo exibido com os dois campos preenchidos
 <img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_211920.png?raw=true" height="800" />
-5. Resultado de número quebrado quebrado sendo exibido com os dois campos preenchidos
+5. Resultado de número quebrado sendo exibido com os dois campos preenchidos
 <img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_211933.png?raw=true" height="800" />
 6. Componente de compartilhamento sendo exibido
 <img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_211946.png?raw=true" height="800" />
