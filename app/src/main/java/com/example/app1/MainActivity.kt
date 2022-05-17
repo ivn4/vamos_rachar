@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity(){
                     text = "0.0"
                 currentValor = text.toDouble()
                 val valorFinal =  DecimalFormat("0.00").format(divideCheck(currentValor, currentQtdePessoas))
-                resultado.text = "R$ " + valorFinal
+                resultado.text = valorFinal
             }
 
         })
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity(){
                     text = "0"
                 currentQtdePessoas = text.toInt()
                 val valorFinal =  DecimalFormat("0.00").format(divideCheck(currentValor, currentQtdePessoas))
-                resultado.text = "R$ " + valorFinal
+                resultado.text = valorFinal
             }
         })
 

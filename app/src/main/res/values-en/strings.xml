@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Vamos Rachar!</string>
-    <string name="vamos_rachar">Vamos Rachar!</string>
-    <string name="rs">R$</string>
+    <string name="app_name">Split it!</string>
+    <string name="vamos_rachar">Split it!</string>
+    <string name="rs">$</string>
     <string name="title_activity_teste">TesteActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -11,9 +12,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="nome_app">Vamos Rachar</string>
-    <string name="_00_00">00,00</string>
-    <string name="descricaotts">text to speech</string>
+    <string name="nome_app">Split it!</string>
     <string name="share">compartilhar resultado</string>
     <string name="qtde_pessoas">Inserir a quantidade de pessoas</string>
     <string name="valor">inserir o valor final da conta.</string>
