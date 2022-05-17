@@ -40,19 +40,19 @@
 
 ### Printscreens
 1. Emulador Nexus S, tela em inglês e na horizontal.
-<img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/ENnexusShorizontal.png" height="800" />
+<img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/ENnexusShorizontal.png" width="800" />
 2. Emulador Nexus S, tela em inglês e na vertical.
 <img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/ENnexusSvertical.png" height="800" />
 3. Emulador Nexus S, tela em português e na horizontal.
-<img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/PTnexusShorizontal.png" height="800" />
+<img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/PTnexusShorizontal.png" width="800" />
 4. Emulador Nexus S, tela em português e na vertical.
 <img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/PTnexusSvertical.png" height="800" />
 5. Emulador Nexus 10, tela em inglês e na horizontal.
-<img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/ENsplitnexus10horizontal.png" height="800" />
+<img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/ENsplitnexus10horizontal.png" width="800" />
 6. Emulador Nexus 10, tela em inglês e na vertical.
 <img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/ENsplitnexus10vertical.png" height="800" />
 7. Emulador Nexus 10, tela em português e na horizontal.
-<img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/PTtnexus10horizontal.png" height="800" />
+<img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/PTtnexus10horizontal.png" width="800" />
 8. Emulador Nexus 10, tela em português e na vertical.
 <img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/PTtnexus10vertical.png" height="800" />
 9. Teste de acessibilidade, atestando que não há sugestões de melhora.
