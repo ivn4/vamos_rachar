@@ -1,9 +1,11 @@
 # Ivna Almeida
-### Trabalho para a cadeira de: Programação para Dispositivos Móveis I
+## Trabalho para a cadeira de: Programação para Dispositivos Móveis I
 
 
-### Vamos Rachar
+## Vamos Rachar
 **Descrição:** Aplicativo que tem objetivo de dividir o valor de uma conta entre um número de pessoas. Basta inserir o valor da conta no primeiro campo e a quantidade de pessoas no segundo campo que ele calculará o preço por pessoa automaticamente. Você também pode usar o botão de compartilhar para enviar este valor aos seus amigos e também usar o botão de Text to Speech para ouvir o valor final ditado pelo aplicativo.
+
+## Primeira entrega
 
 | Funcionalidades | Pontuação |
 | ------ | ------ |
@@ -26,3 +28,12 @@
 <img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_211933.png?raw=true" height="800" />
 6. Componente de compartilhamento sendo exibido
 <img src="https://github.com/ivn4/vamos_rachar/blob/master/screenshots/Screenshot_20220511_211946.png?raw=true" height="800" />
+
+## Segunda Entrega
+
+| Funcionalidades | Pontuação |
+| ------ | ------ |
+| Orientação do Dispositivo | 2.5 |
+| Para duas classes de Tamanho da Tela do dispositivo | 2.5 |
+| Para duas Línguas diferentes (e.g., Inglês e Português)  | 2.5 |
+| Acrescente elementos de descrição para tornar o aplicativo acessível | 2.5 |
