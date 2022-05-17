@@ -86,7 +86,7 @@
             android:layout_height="65dp"
             android:layout_marginLeft="100dp"
             android:layout_marginRight="60dp"
-            android:paddingRight="20dp"
+            android:paddingRight="0dp"
             app:srcCompat="@drawable/multiple_users_silhouette"
             app:tint="#FFFFFF"
             android:contentDescription="TODO" />
