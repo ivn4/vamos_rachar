@@ -15,21 +15,37 @@ import java.text.DecimalFormat
 import java.util.*
 
 
-class MainActivity : AppCompatActivity(){
-    lateinit var tts : TextToSpeech
-    lateinit var resultado : TextView
-    lateinit var ttsButton: Button
+class MainActivity : AppCompatActivity(), Observer, View.OnClickListener, TextWatcher {
+
+    var contaModel: ContaModel? = null
+
+    var tts : TextToSpeech? = null
+    var valorTotalContaEditText : TextInputEditText? = null
+    var qtdePessoasEditText : TextInputEditText? = null
+    var valorDivididoContaTextView : TextView? = null
+    var shareButton: Button? = null
+    var ttsButton: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        resultado = findViewById(R.id.resultado) as TextView
-        val valor : TextInputEditText = findViewById(R.id.valor) as TextInputEditText
-        val qtdePessoas : TextInputEditText = findViewById<TextInputEditText>(R.id.qtdePessoas)
+        // create a variable to represent ContaModel
+        contaModel = ContaModel()
+        contaModel!!.addObserver(this)
 
-        var currentValor : Double = 0.0
-        var currentQtdePessoas : Int = 0
+        // association of controllers with layout components
+        valorTotalContaEditText = findViewById(R.id.valor)
+        qtdePessoasEditText = findViewById(R.id.qtdePessoas)
+        valorDivididoContaTextView = findViewById(R.id.resultado)
+        shareButton = findViewById(R.id.shareButton)
+        ttsButton = findViewById(R.id.ttsButton)
+
+        valorTotalContaEditText?.addTextChangedListener(this)
+        qtdePessoasEditText?.addTextChangedListener(this)
+        shareButton?.setOnClickListener(this)
+        ttsButton?.setOnClickListener(this)
+
 
         tts = TextToSpeech(this, TextToSpeech.OnInitListener { i ->
             if (i == TextToSpeech.SUCCESS) {
@@ -37,65 +53,29 @@ class MainActivity : AppCompatActivity(){
                 tts!!.setLanguage(Locale("pt","BR"))
             }
         })
+    }
 
-
-        ttsButton = findViewById(R.id.ttsButton)
-        ttsButton.setOnClickListener{
-            var reais = resultado.text.toString().substring(2,resultado.text.toString().length-3)
-            var centavos = resultado.text.toString().substring(resultado.text.toString().length-2)
-            speakOut("A conta deu" + reais + "reais e " + centavos + " centavos para cada.")
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.shareButton -> shared()
+            R.id.ttsButton -> ttsSpeaker()
         }
+    }
 
-        valor.addTextChangedListener(object : TextWatcher {
+    fun shared(){
+        val sharingIntent = Intent(Intent.ACTION_SEND)
+        sharingIntent.type = "text/plain"
+        val shareBody = "Compartilhe o resultado da conta com seus amigos."
+        sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Conta")
+        sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody)
+        startActivity(Intent.createChooser(sharingIntent, "Compartilhe através"))
+    }
 
-            override fun afterTextChanged(s: Editable) {}
-
-            override fun beforeTextChanged(s: CharSequence, start: Int,
-                                           count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence, start: Int,
-                                       before: Int, count: Int) {
-                var text : String = "" + s
-                if(text == "")
-                    text = "0.0"
-                currentValor = text.toDouble()
-                val valorFinal =  DecimalFormat("0.00").format(divideCheck(currentValor, currentQtdePessoas))
-                resultado.text = valorFinal
-            }
-
-        })
-
-        qtdePessoas.addTextChangedListener(object : TextWatcher {
-
-            override fun afterTextChanged(s: Editable) {}
-
-            override fun beforeTextChanged(s: CharSequence, start: Int,
-                                           count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence, start: Int,
-                                       before: Int, count: Int) {
-                var text : String = "" + s
-                if(text == "")
-                    text = "0"
-                currentQtdePessoas = text.toInt()
-                val valorFinal =  DecimalFormat("0.00").format(divideCheck(currentValor, currentQtdePessoas))
-                resultado.text = valorFinal
-            }
-        })
-
-        val shareButton: Button = findViewById(R.id.shareButton)
-        shareButton.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                val sharingIntent = Intent(Intent.ACTION_SEND)
-                sharingIntent.type = "text/plain"
-                val shareBody = "Compartilhe o resultado da conta com seus amigos."
-                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Conta")
-                sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody)
-                startActivity(Intent.createChooser(sharingIntent, "Compartilhe através"))
-            }
-        })
+    fun ttsSpeaker(){
+        val resultado = valorDivididoContaTextView!!.text.toString()
+        var reais = resultado.substring(0,resultado.length-3)
+        var centavos = resultado.substring(resultado.length-2)
+        speakOut("A conta deu " + reais + " reais e " + centavos + " centavos para cada.")
     }
 
     fun divideCheck(valor: Double, qtdePessoas: Int): Double {
@@ -113,8 +93,41 @@ class MainActivity : AppCompatActivity(){
         tts!!.speak(text, TextToSpeech.QUEUE_FLUSH,null,"")
     }
 
+    override fun update(p0: Observable?, p1: Any?) {
+        var valorFinal: Double = divideCheck(contaModel!!.getValueValorTotalConta(), contaModel!!.getValueQtdePessoas())
+        contaModel!!.setValueValorDividido(valorFinal)
+        valorDivididoContaTextView!!.text = DecimalFormat("0.00").format(contaModel!!.getValueValorDividido())
+    }
+
+    override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+        if(valorTotalContaEditText!!.hasFocus()){
+
+        } else if(qtdePessoasEditText!!.hasFocus()) {
+
+        } else {
+
+        }
+    }
+
+    override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+        var valorFinal: Double = 0.0
+        var text : String = "" + p0
+        if(valorTotalContaEditText!!.hasFocus()){
+            contaModel!!.setValueValorTotalConta(text.toDouble())
+        } else if(qtdePessoasEditText!!.hasFocus()) {
+            contaModel!!.setValueQtdePessoas(text.toInt())
+        } else {
+
+        }
+    }
+
+    override fun afterTextChanged(p0: Editable?) {
+        var valorFinal: Double = divideCheck(contaModel!!.getValueValorTotalConta(), contaModel!!.getValueQtdePessoas())
+        contaModel!!.setValueValorDividido(valorFinal)
+        valorDivididoContaTextView!!.text = DecimalFormat("0.00").format(contaModel!!.getValueValorDividido())
+    }
+
     override fun onDestroy() {
-        // Shutdown TTS
         if (tts != null) {
             tts!!.stop()
             tts!!.shutdown()
