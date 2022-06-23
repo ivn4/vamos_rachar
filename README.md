@@ -57,3 +57,19 @@
 <img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/PTtnexus10vertical.png" height="800" />
 9. Teste de acessibilidade, atestando que não há sugestões de melhora.
 <img src="https://raw.githubusercontent.com/ivn4/vamos_rachar/master/screenshots/nenhumasugestao.png" height="800" />
+
+## Terceira Entrega
+
+| Funcionalidades | Pontuação |
+| ------ | ------ |
+| Implementação da Arquitetura Escolhida | ? |
+
+A arquitetura escolhida foi MVC(Model, View, Controller). Existem duas formas conhecidas de se aplicar MVC em se tratando de dispositivos móveis para android:
+1. Utilizar as activities e fragments para performar a camada Controller e fazer o update da View.
+2. Usar activities ou fracments como View e Controller enquanto o Model será uma classe separada que não extende uma classe do android. 
+
+A forma escolhida foi a segunda.
+
+O arquivo MainActivity.class, que é uma classe que extende AppCompactActivity() está responsável por pegar as informações do model e atualizá-las e, também, exibir, atualizando a View.
+
+O arquivo ContaModel.class é uma classe que não extende classe do android, mas sim funciona como um Observer e tem o papel apenas de ser o Model, ou seja, armazenar os dados relativos a conta.
