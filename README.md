@@ -62,7 +62,7 @@
 
 | Funcionalidades | Pontuação |
 | ------ | ------ |
-| Implementação da Arquitetura Escolhida | ? |
+| Implementação da Arquitetura Escolhida (MVC) | 10 |
 
 A arquitetura escolhida foi MVC(Model, View, Controller). Existem duas formas conhecidas de se aplicar MVC em se tratando de dispositivos móveis para android:
 1. Utilizar as activities e fragments para performar a camada Controller e fazer o update da View.
